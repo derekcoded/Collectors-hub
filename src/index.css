@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-ink-950: #0F1820;
+  --color-ink-900: #14202B;
+  --color-ink-800: #1F3140;
+  --color-ink-700: #2B4152;
+  --color-ink-600: #3C5568;
+  --color-ink-400: #6B8598;
+  --color-ink-200: #B7C6CF;
+
+  --color-paper-50: #F1ECDD;
+  --color-paper-100: #E7E1CE;
+  --color-paper-200: #DAD2B8;
+
+  --color-brass-400: #C9A567;
+  --color-brass-500: #B8925A;
+  --color-brass-600: #93743F;
+
+  --color-moss-500: #5B7452;
+  --color-moss-600: #46603E;
+
+  --color-rust-500: #B65437;
+  --color-rust-600: #9A4028;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper-50);
+  color: var(--color-ink-900);
+  font-family: var(--font-body);
+  background-image: linear-gradient(var(--color-paper-200) 1px, transparent 1px);
+  background-size: 100% 32px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--color-brass-400);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass-500);
+  outline-offset: 2px;
+}
+
+.specimen-tag {
+  position: relative;
+  border: 1px solid var(--color-ink-800);
+}
+
+.specimen-tag::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed var(--color-brass-500);
+  pointer-events: none;
+}
+
+.catalog-number::before {
+  content: "No. ";
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
